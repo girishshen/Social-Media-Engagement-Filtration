@@ -15,3 +15,7 @@ Dataset sourced from Kaggle: [Viral Social Media Trends](https://www.kaggle.com/
 5. **Dashboard:** Responsive Flask web app with dynamic filters and real-time metric updates.
 
 For detailed EDA and methodology, see `Analysis.ipynb`.
+
+## Footer
+
+© 2025 Girish Shenoy.
