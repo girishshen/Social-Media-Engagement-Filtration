@@ -2,10 +2,11 @@
 
 Objective of this project is to conduct interactive filtering and analysis of social media post engagement to uncover trends and identify high-performing content.
 
-**Tools Used:** Python (Flask, pandas, Matplotlib, Seaborn), JavaScript (vanilla), HTML/CSS
+**Tools Used:** Python (Flask, pandas, Matplotlib, Seaborn, Plotly, joblib, scikit-learn), JavaScript (vanilla), HTML/CSS
 
 **Dataset Attribution:**
-Dataset sourced from Kaggle: [Viral Social Media Trends](https://www.kaggle.com/datasets) (CSV files located in `data/raw/` and cleaned data in `data/cleaned/`).
+Dataset sourced from Kaggle: [Viral Social Media Trends and Engagement Analysis](https://www.kaggle.com/datasets/atharvasoundankar/viral-social-media-trends-and-engagement-analysis)  
+CSV files located in `data/raw/` and cleaned data in `data/cleaned/`.
 
 **Key Features and Analysis Steps:**
 1. **Filtering:** Select posts by platform (e.g., Twitter, Instagram, Facebook) and content type (Image, Video, Text).
