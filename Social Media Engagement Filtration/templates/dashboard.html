@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Media Engagement Dashboard</title>
+  <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <h1>📊 Social Media Engagement Dashboard</h1>
+
+      <form method="POST" onsubmit="showProgressBar()">
+        <div class="filters">
+          <label for="platform">Platform:</label>
+          <select name="platform" id="platform">
+            {% for p in platforms %}
+
+              <option value="{{ p }}"
+                      {% if p == platform_selected %} selected
+                      {% endif %}>
+                  {{ p }}
+              </option>
+            {% endfor %}
+          </select>
+
+          <label for="content_type">Content Type:</label>
+          <select name="content_type" id="content_type">
+            {% for c in content_types %}
+              <option value="{{ c }}"
+                      {% if c == content_selected %} selected
+                      {% endif %}>
+                {{ c }}
+              </option>
+            {% endfor %}
+          </select>
+
+          <label for="sort_by">Sort By:</label>
+          <select name="sort_by" id="sort_by">
+            {% for opt in sort_options %}
+              <option value="{{ opt }}"
+                      {% if opt == sort_by %} selected
+                      {% endif %}>
+                {{ opt.replace('_',' ') }}
+              </option>
+            {% endfor %}
+          </select>
+
+          <button type="submit">Apply Filters</button>
+          <button type="button" onclick="exportCSV()">Export to CSV</button>
+        </div>
+
+        <!-- Progress bar indicator -->
+        <progress id="progress-bar" value="0" max="100"></progress>
+      </form>
+
+      <!-- Accessible, responsive table -->
+      <div class="table-container">
+        <table role="grid" aria-label="Engagement data with virality">
+          <caption>Filtered Social Media Posts</caption>
+          <thead>
+            <tr>
+              <th scope="col">Post ID</th>
+              <th scope="col">Platform</th>
+              <th scope="col">Hashtag</th>
+              <th scope="col">Content Type</th>
+              <th scope="col">Region</th>
+              <th scope="col">Views</th>
+              <th scope="col">Likes</th>
+              <th scope="col">Shares</th>
+              <th scope="col">Comments</th>
+              <th scope="col">Total Engagement</th>
+              <!--<th scope="col">Engagement Rate</th>-->
+              <th scope="col">Virality Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for row in tables %}
+            <tr>
+              <td>{{ row['Post_ID'] }}</td>
+              <td>{{ row['Platform'] }}</td>
+              <td>{{ row['Hashtag'] }}</td>
+              <td>{{ row['Content_Type'] }}</td>
+              <td>{{ row['Region'] }}</td>
+              <td>{{ row['Views'] }}</td>
+              <td>{{ row['Likes'] }}</td>
+              <td>{{ row['Shares'] }}</td>
+              <td>{{ row['Comments'] }}</td>
+              <td>{{ row['Total_Engagement'] }}</td>
+              <!--<td>{{ row['Engagement_Rate']  }}</td>-->
+              <td>{{ '%.4f'|format(row['Virality_Score']) }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Load JS served from Flask's static folder -->
+  <script src="../static/control.js"></script>
+</body>
+</html>
