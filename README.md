@@ -4,9 +4,13 @@ Objective of this project is to conduct interactive filtering and analysis of so
 
 **Tools Used:** Python (Flask, pandas, Matplotlib, Seaborn, Plotly, joblib, scikit-learn), JavaScript (vanilla), HTML/CSS
 
+---
+
 **Dataset Attribution:**
 Dataset sourced from Kaggle: [Viral Social Media Trends and Engagement Analysis](https://www.kaggle.com/datasets/atharvasoundankar/viral-social-media-trends-and-engagement-analysis)  
 CSV files located in `data/raw/` and cleaned data in `data/cleaned/`.
+
+---
 
 **Key Features and Analysis Steps:**
 1. **Filtering:** Select posts by platform (e.g., Twitter, Instagram, Facebook) and content type (Image, Video, Text).
@@ -14,6 +18,8 @@ CSV files located in `data/raw/` and cleaned data in `data/cleaned/`.
 3. **Exploratory Analysis:** Generate visualizations for engagement trends over time and calculate distribution metrics.
 4. **Export:** Download filtered datasets as CSV with progress feedback.
 5. **Dashboard:** Responsive Flask web app with dynamic filters and real-time metric updates.
+
+---
 
 For detailed EDA and methodology, see `Analysis.ipynb`.
 
